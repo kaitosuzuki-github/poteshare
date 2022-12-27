@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Poteshare</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PoteShare</title>
+    <meta name="viewport" content="width=1200">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   </head>
-
   <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-left">
+          <%= link_to image_tag("logo.png"), "/" %>
+        </div>
+        <div class="header-right">
+          <% if user_signed_in? %>
+            <label class="user-name" for="toggle" onclick=""><%= current_user.name %></label>
+            <label class="user-image" for="toggle" onclick=""><%= image_tag "/user_images/#{current_user.image_name}" %></label>
+            <input type="checkbox" id="toggle">
+            <ul class="drop-down">
+              <li><%= link_to '新規ルーム登録', new_room_path %></li>
+              <li><%= link_to '登録済みルーム一覧', rooms_path %></li>
+              <li><%= link_to '予約リスト', books_path %></li>
+              <li><%= link_to 'ユーザー情報', users_account_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          <% else %>
+            <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-sign-in' %>
+            <%= link_to '新規登録', new_user_registration_path,  class: 'btn btn-sign-up' %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+    <footer class="footer">
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>

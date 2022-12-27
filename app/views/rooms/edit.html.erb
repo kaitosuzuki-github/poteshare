@@ -1,0 +1,34 @@
+<div class="rooms-edit">
+  <div class="rooms-edit-field">
+  <h3>ルーム編集</h3>
+  <%= render "shared/error", obj: @room %>
+    <%= form_with model: @room do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, class: "form-input" %>
+    </div>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image, autofocus: true%>
+    </div>
+    <div class="field">
+      <%= f.label :address %>
+      <%= f.text_field :address, autofocus: true, class: "form-input" %>
+    </div>
+    <div class="field">
+      <%= f.label :price %>
+      <%= f.text_field :price, autofocus: true, class: "form-input" %>
+    </div>
+    <div class="field">
+      <%= f.label :introduction %>
+      <%= f.text_area :introduction, autofocus: true, class: "form-input" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "更新", class: "btn" %>
+      <%= link_to "キャンセル", rooms_path, class: "btn btn-cancel"%>
+    </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>

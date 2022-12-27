@@ -1,0 +1,42 @@
+<div class="books-confirm">
+  <div class="books-confirm-field">
+    <div class="books-confirm-field-inner">
+      <h3>予約内容確認</h3>
+      <%= render "shared/error", obj: @book %>
+      <%= form_with model: @book, url: books_path do |f| %>
+        <div class="field">
+          <label for="room_price">料金(一人一泊あたり)</label>
+          <p>￥<%= @room.price %></p>
+        </div>
+        <div class="field">
+          <%= f.label :check_in %>
+          <%= f.text_field :check_in, readonly: true, class: "form-input" %>
+        </div>
+        <div class="field">
+          <%= f.label :check_out %>
+          <%= f.text_field :check_out, readonly: true, class: "form-input" %>
+        </div>
+        <div class="field">
+          <label for="stay_days">宿泊日数</label>
+          <p><%= @stay_days %>日</p>
+        </div>
+        <div class="field">
+          <%= f.label :people_num %>
+          <p><%= @book.people_num %>人</p>
+          <%= f.hidden_field :people_num %>
+        </div>
+        <div class="field">
+          <label for="total_price">合計金額</label>
+          <p><%= @total_price %>円</p>
+        </div>
+
+        <%= f.hidden_field :user_id %>
+        <%= f.hidden_field :room_id %>
+        <div class="action">
+          <%= f.submit "予約を確定", class: "btn" %><br>
+          <%= link_to "キャンセル", @room, class: "btn btn-cancel" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

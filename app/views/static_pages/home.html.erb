@@ -1,0 +1,37 @@
+<div class="top">
+  <div class="first-view">
+    <div class="search-field">
+      <div class="search-field-inner">
+        <h2>Potepan Shareでまだ体験したことのない旅をしよう</h2>
+        <%= form_with url: rooms_search_path, method: "get" do |f| %>
+          <div class="form-input-area">
+            <%= f.text_field :area, placeholder: "エリアを入力してください", class: "form-input"%>
+            <%= f.text_field :keyword, placeholder: "キーワードを入力してください", class: "form-input"%>
+          </div>
+          <%= f.submit "探す", class: "btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="recommend-field">
+    <h2>おすすめのエリア</h2>
+    <div class="panel-field">
+      <div class="panel">
+        <%= link_to image_tag("img_tokyo.jpg"), "/rooms/search?area=東京&commit=探す" %>
+        <h3>東京</h3>
+      </div>
+      <div class="panel">
+        <%= link_to image_tag("img_osaka.jpg"), "/rooms/search?area=大阪&commit=探す" %>
+        <h3>大阪</h3>
+      </div>
+      <div class="panel">
+        <%= link_to image_tag("img_kyoto.jpg"), "/rooms/search?area=京都&commit=探す" %>
+        <h3>京都</h3>
+      </div>
+      <div class="panel">
+        <%= link_to image_tag("img_sapporo.jpg"), "/rooms/search?area=札幌&commit=探す"%>
+        <h3>札幌</h3>
+      </div>
+    </div>
+  </div>
+</div>

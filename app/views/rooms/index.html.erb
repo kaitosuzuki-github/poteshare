@@ -1,0 +1,30 @@
+<div class="rooms-index">
+  <div class="rooms-index-field">
+    <h3>登録済みルーム一覧</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ルーム画像</th>
+          <th>ルーム名</th>
+          <th>料金(1日)</th>
+          <th>作成日</th>
+          <th>編集</th>
+          <th>削除</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @rooms.each do |room| %>
+          <tr>
+            <td class="room-image"><%= image_tag "/room_images/#{room.image_name}" %></td>
+            <td class="room-name"><%= link_to room.name, room %></td>
+            <td><%= room.price %>円</td>
+            <td><%= room.created_at.to_s(:datetime_jp) %></td>
+            <td><%= link_to "編集", edit_room_path(room) %></td>
+            <td><%= link_to "削除", room, method: :delete, data: {confirm: "本当に削除しますか?"} %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

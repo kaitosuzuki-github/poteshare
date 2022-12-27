@@ -1,0 +1,85 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.first-view {
+  height: 650px;
+  background-image: url("<%= 'img_cover_top.jpg' %>");
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-field {
+  background-color: white;
+  width: 500px;
+  height: fit-content;
+  position: absolute;
+  left: 200px;
+  border-radius: 5px;
+}
+
+.search-field-inner {
+  margin: 20px;
+}
+
+.search-field-inner h2 {
+  margin-bottom: 20px;
+}
+
+.search-field-inner label {
+  margin-bottom: 10px;
+}
+
+.search-field-inner .form-input {
+  margin: 0px 5px 20px 5px;
+  width: 100%;
+}
+
+.search-field-inner .btn {
+  width: 100%;
+}
+
+.recommend-field {
+  margin: 50px 200px;
+}
+
+.recommend-field h2 {
+  margin-bottom: 20px;
+}
+
+.panel-field {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.panel {
+  position: relative;
+  margin: 10px;
+}
+
+.panel img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.panel h3 {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 1px 2px 3px #808080;
+}
+
+.form-input-area {
+  display: flex;
+}

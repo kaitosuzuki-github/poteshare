@@ -1,0 +1,44 @@
+<div class="rooms-show">
+  <div class="rooms-show-inner">
+    <div class="rooms-show-field">
+      <div class="room-image"><%= image_tag "/room_images/#{@room.image_name}" %></div>
+      <h4><%= @room.name%></h4>
+      <p class="room-address"><%= @room.address %></p>
+      <p class="room-intro"><%= @room.introduction %></p>
+    </div>
+
+    <div class="books-new-field">
+      <div class="books-new-field-inner">
+      <%= render "shared/error", obj: @book %>
+        <%= form_with model: @book, url: books_confirm_path, method: "get" do |f| %>
+          <p class="room-price">¥<%= @room.price %>/日(一人あたり)</p>
+          <div class="field">
+            <%= f.label :check_in %><br>
+            <%= f.date_field :check_in, class: "form-input" %>
+          </div>
+          <div class="field">
+            <%= f.label :check_out %><br>
+            <%= f.date_field :check_out, class: "form-input" %>
+          </div>
+          <div class="field">
+            <%= f.label :people_num %><br>
+            <%= f.number_field :people_num, class: "form-input" %>
+          </div>
+
+          <% if current_user != nil %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :room_id, value: @room.id %>
+            <div class="actions">
+              <%= f.submit "予約する", class: "btn" %>
+            </div>
+          <% else %>
+            <div class="actions">
+              <%= link_to "ログイン", new_user_session_path, class: "btn" %>
+            </div>
+          <% end %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="user-area">
+  <div class="user-nav">
+    <div class="user-nav-inner">
+      <ul>
+        <li><%= link_to 'アカウント', users_account_path %></li>
+        <li class="active"><%= link_to 'プロフィール', users_profile_path %></li>
+        <li><%= link_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当にアカウントを削除しますか？" }, method: :delete, class: "account-delete" %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="user-view-area">
+    <div class="user-field">
+      <div class="user-field-inner">
+        <h3>プロフィール</h3>
+        <div class="field">
+          <label for="name">ユーザー名</label>
+          <div class="user-name"><%= current_user.name %></div>
+        </div>
+        <div class="field">
+          <label for="image_name">アイコン画像</label>
+          <div class="user-image"><%= image_tag "/user_images/#{current_user.image_name}" %></div>
+        </div>
+        <div class="field">
+          <label for="introduction">紹介</label>
+          <div class="user-intro"><%= simple_format(current_user.introduction) %></div>
+        </div>
+        <div class="account">
+          <%= link_to '編集', users_profile_edit_path, class: "btn" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

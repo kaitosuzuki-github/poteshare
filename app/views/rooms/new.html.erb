@@ -1,0 +1,47 @@
+<div class="room-field">
+  <div class="room-inner">
+    <h3>ルーム情報登録</h3>
+    <%= render "shared/error", obj: @room %>
+    <%= form_with model: @room do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <div class="form-input-field">
+          <%= f.text_field :name, autofocus: true, placeholder: "ルーム名を入力", class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :introduction %>
+        <div class="form-input-field">
+          <%= f.text_area :introduction, autofocus: true, placeholder: "ルーム説明を入力", class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :price %>
+        <div class="form-input-field">
+          <%= f.text_field :price, autofocus: true, placeholder: "一日あたりの料金を入力を入力", class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :address %>
+        <div class="form-input-field">
+          <%= f.text_field :address, autofocus: true, placeholder: "住所を入力", class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+
+      <%= f.hidden_field :user_id, value: current_user.id %>
+
+      <div class="actions">
+        <%= f.submit "登録", class: "btn" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
