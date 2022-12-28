@@ -20,9 +20,10 @@ class RoomsController < ApplicationController
         else
           render new_room_path
         end
+      else
+        flash[:notice] = "ルームを登録しました"
+        redirect_to root_path
       end
-      flash[:notice] = "ルームを登録しました"
-      redirect_to root_path
     else
       render "new"
     end
