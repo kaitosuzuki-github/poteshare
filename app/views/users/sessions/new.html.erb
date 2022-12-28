@@ -1,0 +1,27 @@
+<div class="user-area">
+  <div class="user-field">
+    <div class="user-field-inner">
+      <h3>ログイン</h3>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <p>必須</p>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-input" %>
+      </div>
+
+      <div class="field">
+        <p>必須</p>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "form-input" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "ログイン", class: "btn" %>
+      </div>
+      <% end %>
+
+      <div class="render">
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

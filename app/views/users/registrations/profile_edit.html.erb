@@ -1,0 +1,30 @@
+<div class="user-area">
+  <div class="user-field">
+    <div class="user-field-inner">
+      <h2>プロフィール編集</h2>
+
+      <%= form_with model: @user, url: users_profile_update_path do |f| %>
+        <div class="field">
+          <%= f.label :name, "ユーザー名" %>
+          <%= f.text_field :name, class: "form-input", autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :image, "アイコン画像" %>
+          <%= f.file_field :image %>
+        </div>
+
+        <div class="field">
+          <%= f.label :introduction, "自己紹介" %>
+          <%= f.text_area :introduction, class: "form-input", autofocus: true %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "更新", class: "btn" %>
+        </div>
+      <% end %>
+
+      <%= link_to "キャンセル", users_profile_path, class: "back-btn btn", autofocus: true %>
+    </div>
+  </div>
+</div>

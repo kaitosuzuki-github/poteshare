@@ -1,0 +1,108 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.books-new-field {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  margin: 20px 0px;
+}
+
+.books-new-field .field label {
+  width: fit-content;
+}
+
+.books-new-field-inner {
+  margin: 20px;
+}
+
+.books-new-field .room-price {
+  font-size: 22px;
+}
+
+.rooms-show-field .room-intro {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+.books-confirm {
+  display: flex;
+  justify-content: center;
+}
+
+.books-confirm-field {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 50px;
+}
+
+.books-confirm-field-inner {
+  margin: 30px 50px;
+}
+
+.books-confirm-field h3 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 22px;
+  padding: 10px 0px;
+}
+
+.books-confirm-field btn {
+  margin-top: 10px;
+}
+
+.books-confirm-field .btn-cancel {
+  display: inline-block;
+  background-color: #525252;
+  margin: 10px 0px;
+}
+
+.books-confirm-field .field p {
+  display: inline-block;
+}
+
+.books-confirm-field .action {
+  text-align: center;
+}
+
+.books-index-inner {
+  margin: 30px;
+}
+
+.books-index thead tr {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 800px;
+}
+
+.books-index h3 {
+  margin: 30px 0px;
+}
+
+.books-index-inner table {
+  min-width: 800px;
+}
+
+.books-index thead tr th {
+  padding: 10px;
+}
+
+.books-index tbody tr td {
+  text-align: center;
+}
+
+.books-index-inner .room-image img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.books-index tbody tr td {
+  padding: 10px;
+}
+
+.books-index .room-name a {
+  color: #4a90e2;
+  text-decoration: underline;
+  font-weight: bold;
+}

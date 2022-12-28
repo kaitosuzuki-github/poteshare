@@ -10,6 +10,155 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+label {
+  display: inline-block;
+}
+
+input {
+  display: inline-block;
+}
+
+.btn {
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 0px solid;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: #007bff;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.form-input {
+  font-size: 15px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.header {
+  background-color: black;
+  height: 70px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .btn {
+  margin: 5px;
+}
+
+.user-name {
+  color: white;
+  cursor: pointer;
+  padding: 0px 10px;
+}
+
+.user-image img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+#toggle {
+  display: none;
+}
+
+#toggle:checked ~ .drop-down {
+  display: block;
+}
+
+.drop-down {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: white;
+  z-index: 100;
+}
+
+.drop-down a {
+  color: black;
+}
+
+.btn-sign-up {
+  background-color: #6c757d;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.notice {
+  text-align: center;
+}
+
+.drop-down li {
+  margin: 5px 10px;
+}
+
+textarea {
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.error-message {
+  color: red;
+}

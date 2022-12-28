@@ -1,0 +1,35 @@
+<div class="books-index">
+  <div class="books-index-inner">
+    <h3>予約リスト</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ルーム画像</th>
+          <th>ルーム名</th>
+          <th>宿泊日数</th>
+          <th>人数</th>
+          <th>合計金額</th>
+          <th>チェックイン</th>
+          <th>チェックアウト</th>
+          <th>予約確定日時</th>
+          <th>キャンセル</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+          <tr>
+            <td class="room-image"><%= image_tag "/room_images/#{book.room.image_name}" %></td>
+            <td class="room-name"><%= link_to book.room.name, book.room %></td>
+            <td><%= (book.check_out - book.check_in).to_i %></td>
+            <td><%= book.people_num %></td>
+            <td><%= book.room.price * (book.check_out - book.check_in).to_i * book.people_num %></td>
+            <td><%= book.check_in %></td>
+            <td><%= book.check_out %></td>
+            <td><%= book.created_at.to_s(:datetime_jp) %></td>
+            <td><%= link_to "キャンセル", book, method: :delete, data: {confirm: "本当にキャンセルしますか?"} %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

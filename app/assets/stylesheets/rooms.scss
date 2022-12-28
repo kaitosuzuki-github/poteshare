@@ -1,0 +1,166 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.room-field {
+  display: flex;
+  justify-content: center;
+}
+
+.room-inner {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px 50px;
+  margin-top: 100px;
+}
+
+.rooms-search-inner {
+  margin: 20px 50px;
+}
+
+.rooms-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room-wrap-item {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+.room-wrap-item .room-image {
+  margin: 10px 0px;
+}
+.room-wrap-item .room-image img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-inner .field .form-input-field::before {
+  content: "必須";
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.room-item-text .room-name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.room-item-text {
+  margin: 10px;
+}
+
+.room-item-text p {
+  margin: 5px 0px;
+}
+
+.room-inner .field .form-input-field {
+  display: inline-block;
+}
+
+.form-input {
+  width: 300px;
+}
+
+.room-field h3 {
+  text-align: center;
+}
+
+.room-field .actions {
+  text-align: center;
+}
+
+.rooms-index-field {
+  margin: 30px;
+}
+
+.rooms-index h3 {
+  margin: 30px 0px;
+}
+
+.rooms-index-field table {
+  min-width: 800px;
+}
+
+.rooms-index thead tr {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 800px;
+}
+
+.rooms-index thead tr th {
+  padding: 10px;
+}
+
+.rooms-index tbody tr td {
+  text-align: center;
+}
+
+.rooms-index-field .room-image img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.rooms-index tbody tr td {
+  padding: 10px;
+}
+
+.rooms-index .room-name a {
+  color: #4a90e2;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.rooms-edit {
+  display: flex;
+  justify-content: center;
+}
+
+.rooms-edit-field {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 30px 50px;
+  margin: 100px 0px;
+}
+
+.rooms-edit h3 {
+  text-align: center;
+}
+
+.rooms-edit .actions {
+  text-align: center;
+}
+
+.rooms-edit .btn-cancel {
+  background-color: #525252;
+}
+
+.rooms-edit .actions .btn {
+  margin: 10px;
+}
+
+.rooms-show-inner {
+  margin: 50px 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rooms-show-field {
+  max-width: 700px;
+  min-width: 400px;
+  margin: 20px 0px;
+}
+
+.rooms-show-field .room-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.rooms-show-field h4 {
+  font-size: 25px;
+  font-weight: normal;
+}
